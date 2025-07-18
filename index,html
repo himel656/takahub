@@ -216,16 +216,29 @@
     }
 
     function showRewardedAD() {
-        // Example of a reward ad function (adjust with actual ad implementation)
-        setTimeout(function() {
-            points += 10;
-            balance += 0.01;
-            localStorage.setItem("userpoints", points);
-            localStorage.setItem("userbalance", balance);
-            updateBalance();
-            alert("You have completed the task and earned 10 points!");
-        }, 1000);
-    }
+       
+
+// Rewarded interstitial
+
+show_9589709().then(() => {
+    // You need to add your user reward function here, which will be executed after the user watches the ad.
+    // For more details, please refer to the detailed instructions.
+    alert('You have seen an ad!');
+})
+
+       
+
+// Rewarded Popup
+
+show_9589709('pop').then(() => {
+    // user watch ad till the end or close it in interstitial format
+    // your code to reward user for rewarded format
+}).catch(e => {
+    // user get error during playing ad
+    // do nothing or whatever you want
+})
+
+         
 
     function updateBalance() {
         document.getElementById("userpoints").textContent = points;
